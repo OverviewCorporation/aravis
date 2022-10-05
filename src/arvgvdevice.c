@@ -1400,6 +1400,30 @@ arv_gv_device_load_genicam (ArvGvDevice *gv_device, GError **error)
 					      "<AccessMode>RO</AccessMode>"
 					      "<pPort>Device</pPort>"
 					      "</StringReg>", NULL);
+		arv_gc_set_default_node_data (priv->genicam, "GevCurrentIPAddress",
+		                  "<IntReg Name=\"GevCurrentIPAddress\">"
+		                  "<Address>0x0024</Address>"
+		                  "<Length>4</Length>"
+		                  "<AccessMode>RW</AccessMode>"
+		                  "<Endianess>BigEndian</Endianess>"
+		                  "<pPort>Device</pPort>"
+		                  "</IntReg>", NULL);
+		arv_gc_set_default_node_data (priv->genicam, "GevCurrentSubnetMask",
+		                  "<IntReg Name=\"GevCurrentSubnetMask\">"
+		                  "<Address>0x0034</Address>"
+		                  "<Length>4</Length>"
+		                  "<AccessMode>RW</AccessMode>"
+		                  "<Endianess>BigEndian</Endianess>"
+		                  "<pPort>Device</pPort>"
+		                  "</IntReg>", NULL);
+		arv_gc_set_default_node_data (priv->genicam, "GevCurrentDefaultGateway",
+		                  "<IntReg Name=\"GevCurrentDefaultGateway\">"
+		                  "<Address>0x0044</Address>"
+		                  "<Length>4</Length>"
+		                  "<AccessMode>RW</AccessMode>"
+		                  "<Endianess>BigEndian</Endianess>"
+		                  "<pPort>Device</pPort>"
+		                  "</IntReg>", NULL);
 		arv_gc_set_default_node_data (priv->genicam, "GevPersistentIPAddress",
 					      "<IntReg Name=\"GevPersistentIPAddress\">"
 					      "<Address>0x64c</Address>"
